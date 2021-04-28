@@ -1,0 +1,69 @@
+{
+  "name": "luna-component-seed",
+  "homepage": "https://github.com/Yuntun-Study-Longue/$npm_package_name",
+  "version": "0.0.1",
+  "main": "main.js",
+  "author": "alichs",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Yuntun-Study-Longue/luna-component-seed/issues"
+  },
+  "scripts": {
+    "storybook": "start-storybook -p 6006",
+    "build-storybook": "build-storybook",
+    "start": "razzle start",
+    "build": "razzle build",
+    "test": "razzle test --env=jsdom --watchAll",
+    "start:prod": "NODE_ENV=production node build/server.js",
+    "es5": "babel index.js -o main.js && babel src/components -d dist/src/components",
+    "prestart": "npm link sys-antd"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Yuntun-Study-Longue/luna-component-seed.git"
+  },
+  "keywords": [
+    "node  10.9.0",
+    "hapi  ^17.5.4",
+    "react ^16.14.0"
+  ],
+  "dependencies": {
+    "@ant-design/icons": "^4.6.2",
+    "antd": "^4.15.0",
+    "hapi": "^17.5.4",
+    "react": "16.14.0",
+    "react-dom": "16.14.0",
+    "react-router-dom": "5.2.0"
+  },
+  "devDependencies": {
+    "@storybook/addon-actions": "^6.2.9",
+    "@storybook/addon-essentials": "^6.2.9",
+    "@storybook/addon-links": "^6.2.9",
+    "@storybook/react": "^6.2.9",
+    "babel-loader": "^8.2.2",
+    "@babel/cli": "^7.13.14",
+    "@babel/core": "^7.13.14",
+    "@babel/plugin-proposal-class-properties": "^7.13.0",
+    "@babel/plugin-syntax-dynamic-import": "^7.8.3",
+    "@babel/plugin-transform-regenerator": "^7.12.13",
+    "@babel/plugin-transform-runtime": "^7.13.10",
+    "@babel/preset-env": "^7.12.11",
+    "@babel/preset-react": "^7.13.13",
+    "babel-plugin-add-module-exports": "^1.0.4",
+    "babel-plugin-dynamic-import-node": "^2.3.3",
+    "babel-plugin-import": "^1.6.3",
+    "babel-plugin-macros": "^3.0.1",
+    "babel-plugin-styled-components": "^1.12.0",
+    "babel-plugin-transform-class-properties": "^6.5.2",
+    "babel-plugin-transform-decorators-legacy": "^1.3.5",
+    "css-loader": "^5.2.0",
+    "inert": "^5.1.3",
+    "less": "^2.7.3",
+    "less-loader": "^4.0.5",
+    "mini-css-extract-plugin": "0.9.0",
+    "postcss": "^8.2.7",
+    "postcss-loader": "^5.1.0",
+    "razzle": "3.3.8",
+    "react-loadable": "^5.5.0"
+  }
+}

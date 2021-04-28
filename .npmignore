@@ -1,0 +1,15 @@
+# dependencies
+/node_modules
+
+# source files
+/src
+/public
+/sandbox.config.json
+
+# sourcemap files
+*.map
+
+/main.js
+/razzle.config.js
+/webpack.*
+/babel.config.json
