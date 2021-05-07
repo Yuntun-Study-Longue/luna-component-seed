@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { Button } from './Button';
+import { Button } from '../components/Button';
 
 export default {
   title: 'Example/Button',
@@ -34,3 +34,9 @@ Small.args = {
   size: 'small',
   label: 'Button',
 };
+
+export const Red = Template.bind({});
+Red.args = {
+  label: 'Button',
+  backgroundColor: 'red'
+}

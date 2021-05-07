@@ -1,7 +1,9 @@
-import SysButton from './sysButton'
-import SysIcon from './sysIcon'
+import Button from './Button';
+import Header from './Header';
+import Page from './Page';
 
 export default {
-    SysButton,
-    SysIcon
+    Button,
+    Header,
+    Page,
 }
