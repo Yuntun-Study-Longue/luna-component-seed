@@ -8,8 +8,16 @@ module.exports = (componentName) => ({
       component: ${componentName},
   };
 
-  export const WithBar = () => <${componentName} foo="bar" />;
-  export const WithBaz = () => <${componentName} foo="baz" />;
+  const Template = (args) => <${componentName} {...args} />;
+
+  export const WithBar = Template.bind({});
+  WithBar.args = {
+    foo: "bar",
+  };
+  export const WithBaz = Template.bind({});
+  WithBaz.args = {
+    foo: "baz",
+  };
   `,
     extension: `.stories.js`
   });

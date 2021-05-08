@@ -7,6 +7,13 @@
       component: Test,
   };
 
-  export const WithBar = () => <Test foo="bar" />;
-  export const WithBaz = () => <Test foo="baz" />;
-  
+  const Template = (args) => <Test {...args} />;
+
+  export const WithBar = Template.bind({});
+  WithBar.args = {
+    foo: "bar",
+  };
+  export const WithBaz = Template.bind({});
+  WithBaz.args = {
+    foo: "baz",
+  };
