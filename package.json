@@ -9,7 +9,7 @@
     "url": "https://github.com/Yuntun-Study-Longue/luna-component-seed/issues"
   },
   "scripts": {
-    "storybook": "start-storybook -p 6006 -- --no-open",
+    "storybook": "cross-env BROWSER=none start-storybook -p 6006",
     "build-storybook": "build-storybook",
     "generate": "node ./util/create-component",
     "build:comp": "rollup -c",
@@ -77,6 +77,7 @@
     "rollup-plugin-copy": "^3.3.0",
     "rollup-plugin-peer-deps-external": "^2.2.0",
     "rollup-plugin-postcss": "^3.1.2",
-    "sass-loader": "^10.1.1"
+    "sass-loader": "^10.1.1",
+    "cross-env": "^5.2.0"
   }
 }
