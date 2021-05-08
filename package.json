@@ -2,7 +2,8 @@
   "name": "luna-component-seed",
   "homepage": "https://github.com/Yuntun-Study-Longue/$npm_package_name",
   "version": "0.0.1",
-  "main": "lib/main.js",
+  "main": "lib/index.js",
+  "module": "es/index.js",
   "author": "alichs",
   "license": "MIT",
   "bugs": {

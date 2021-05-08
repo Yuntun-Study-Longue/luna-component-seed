@@ -14,6 +14,11 @@ export default {
       file: packageJson.main,
       format: "cjs",
       sourcemap: true
+    },
+    {
+      file: packageJson.module,
+      format: "esm",
+      sourcemap: true
     }
   ],
   plugins: [
@@ -30,12 +35,12 @@ export default {
       targets: [
         {
           src: "src/components/variables.scss",
-          dest: "lib",
+          dest: ["lib", "es"],
           rename: "variables.scss"
         },
         {
           src: "src/components/typography.scss",
-          dest: "lib",
+          dest: ["lib", "es"],
           rename: "typography.scss"
         }
       ]
