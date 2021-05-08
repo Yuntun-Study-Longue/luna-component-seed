@@ -11,7 +11,8 @@ if (!componentName) {
 
 console.log("Creating Component Templates with name: " + componentName);
 
-const componentDirectory = `./src/${componentName}`;
+const componentDirectory = `./src/components/${componentName}`;
+const storyDirectory = `./src/stories`;
 
 if (fs.existsSync(componentDirectory)) {
   console.error(`Component ${componentName} already exists.`.red);
@@ -23,10 +24,24 @@ fs.mkdirSync(componentDirectory);
 const generatedTemplates = templates.map((template) => template(componentName));
 
 generatedTemplates.forEach((template) => {
-  fs.writeFileSync(
+  if (template.extension === '.stories.js') {
+    fs.writeFileSync(
+    `${storyDirectory}/${componentName}${template.extension}`,
+    template.content
+    );
+  }
+  else if (template.extension === '.js') {
+    fs.writeFileSync(
+    `${componentDirectory}/index${template.extension}`,
+    template.content
+    );
+  }
+  else {
+    fs.writeFileSync(
     `${componentDirectory}/${componentName}${template.extension}`,
     template.content
-  );
+    );
+  }
 });
 
 console.log(

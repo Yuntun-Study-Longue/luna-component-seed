@@ -1,8 +1,7 @@
-module.exports = (componentName) => ({
-    content: `// Generated with util/create-component.js
+// Generated with util/create-component.js
   import React from "react";
   import { render } from "@testing-library/react";
-  import ${componentName} from ".";
+  import Test from ".";
   describe("Test Component", () => {
     let props;
 
@@ -12,15 +11,13 @@ module.exports = (componentName) => ({
       };
     });
 
-    const renderComponent = () => render(<${componentName} {...props} />);
+    const renderComponent = () => render(<Test {...props} />);
 
     it("should render foo text correctly", () => {
       props.foo = "harvey was here";
       const { getByTestId } = renderComponent();
-      const component = getByTestId("${componentName}");
+      const component = getByTestId("Test");
       expect(component).toHaveTextContent("harvey was here");
     });
   });
-  `,
-    extension: `.test.js`
-  });
+  

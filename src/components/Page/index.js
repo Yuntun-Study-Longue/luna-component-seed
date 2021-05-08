@@ -69,3 +69,5 @@ Page.propTypes = {
 Page.defaultProps = {
   user: null,
 };
+
+export default Page
