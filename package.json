@@ -9,7 +9,7 @@
     "url": "https://github.com/Yuntun-Study-Longue/luna-component-seed/issues"
   },
   "scripts": {
-    "storybook": "start-storybook -p 6006",
+    "storybook": "start-storybook -p 6006 -- --no-open",
     "build-storybook": "build-storybook",
     "generate": "node ./util/create-component",
     "build:comp": "rollup -c",

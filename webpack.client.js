@@ -52,21 +52,5 @@ module.exports = (config, webpack) => {
         ...config.plugins,
         extractLess, // <- Add the ExtractTextPlugin instance here
         ],
-        devServer: {
-            ...config.devServer,
-            host: '0.0.0.0',
-            proxy:[{
-                context: ["/sysware"],
-                // target: "http://192.168.100.1:8080/",
-                // target: "http://192.168.11.44:8080/",
-                // target: "http://192.168.12.14:8080/",
-                target: "http://192.168.5.202:8825/",
-                // target: "http://192.168.12.109:8080/", 
-                changeOrigin: true,
-                disableHostCheck: true,
-                noInfo: true,
-              }
-            ],
-        }
     }
 }
