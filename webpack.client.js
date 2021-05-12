@@ -10,6 +10,11 @@ const antdTheme = {
 } || require('./antdTheme') // Include variables to override antd theme
 
 module.exports = (config, webpack) => {
+    const thirdPartyScripts = new webpack.ProvidePlugin({
+        $: "jquery",
+        jQuery: "jquery",
+    })
+    
     return {
         ...config,
         module: {
@@ -51,6 +56,7 @@ module.exports = (config, webpack) => {
         plugins: [
         ...config.plugins,
         extractLess, // <- Add the ExtractTextPlugin instance here
+        thirdPartyScripts,
         ],
     }
 }

@@ -1,3 +1,4 @@
+const webpack = require('webpack');
 const path = require("path");
 
 module.exports = {
@@ -10,5 +11,5 @@ module.exports = {
     "@storybook/addon-postcss",
     "@storybook/addon-essentials"
   ],
-  webpackFinal: async (config) => require(`../webpack.client`)(config)
+  webpackFinal: async (config) => require(`../webpack.client`)(config, webpack)
 }
