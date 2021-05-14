@@ -13,8 +13,12 @@ module.exports = (config, webpack) => {
     const thirdPartyScripts = new webpack.ProvidePlugin({
         $: "jquery",
         jQuery: "jquery",
+        "window.jQuery": "jquery",
+        "d3": "d3",
+        "_": "underscore",
+        "dialog": "art-dialog",
     })
-    
+
     return {
         ...config,
         module: {
