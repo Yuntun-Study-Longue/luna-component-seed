@@ -1,6 +1,7 @@
 // Generated with util/create-component.js
   import React from "react";
   import TreeLinks from "../components/TreeLinks";
+  import data from "../components/TreeLinks/treedata.json"
 
   export default {
       title: "Example/TreeLinks",
@@ -11,10 +12,12 @@
 
   export const WithBar = Template.bind({});
   WithBar.args = {
-    foo: "bar",
+    data,
+    config: {}
   };
   export const WithBaz = Template.bind({});
   WithBaz.args = {
-    foo: "baz",
+    data: {},
+    config: {}
   };
   
