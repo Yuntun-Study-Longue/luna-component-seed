@@ -31,6 +31,15 @@ D3TreeLinks.create = (el, data, configuration = [
     .on("dblclick.zoom", null) // 防止双击缩放
     // .append("g")
 
+    //力导向图布局
+    let force = d3.forceSimulation([])
+    .force("link", d3.forceLink(data.links).id((d)=>(d.id)).distance(100))
+    .force("charge", d3.forceManyBody().strength(-2500))
+    .force("center", d3.forceCenter( el.offsetWidth / 2,  el.offsetHeight / 2))
+    .force("x", d3.forceX())
+    .force("y", d3.forceY())
+    .force("collide",d3.forceCollide().strength(0.2).iterations(5))
+
     // 自定义图形
     let arrow = svg.append("svg:defs")
         .selectAll("marker")
@@ -47,7 +56,7 @@ D3TreeLinks.create = (el, data, configuration = [
         .attr("orient", "auto")
         .append("svg:path")
         .attr("d", "M0,0L10,5L10,-5")
-        .attr('fill', '#666');    
+        .attr('fill', '#666');
 
     arrow.data(["end-arrow"]).enter().append("svg:marker")
         .attr("id", d=>d)
@@ -79,7 +88,10 @@ D3TreeLinks.create = (el, data, configuration = [
     })
 
     function update(source, { name, margin, width }, root) {
-        // let root = source;
+        //转换数据
+        force.nodes(data[name].nodes);
+        // force.force("link").links(data.links);
+
         let barWidth = (width - margin.right) * 0.8;
 
         // Compute the flattened node list.

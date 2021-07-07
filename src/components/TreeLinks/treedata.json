@@ -1,7 +1,7 @@
 {
-  "A" : {
-    "nodes": {
-      "name": "A1",
+  "nodes": [
+    {
+      "name": "A",
       "value": 100,
       "children": [
         {
@@ -61,14 +61,12 @@
           ]
         }
       ]
-    }
-  },
-  "B": {
-    "nodes": {
+    },
+    {
       "name": "Z1",
       "value": 100
     }
-  },
+],
   "links": [
     { "source": "A1", "target": "Z1", "value": 10 }  
   ]
